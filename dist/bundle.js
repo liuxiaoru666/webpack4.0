@@ -151,7 +151,7 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _static_css_common_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./static/css/common.scss */ \"./src/static/css/common.scss\");\n/* harmony import */ var _static_css_common_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_static_css_common_scss__WEBPACK_IMPORTED_MODULE_0__);\n//全局样式\r\n\r\n\r\n var root = document.getElementById('root');\r\n\r\n root.innerHTML = '<div class=\"test iconfont\">&#xe61f;</div>'\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _static_css_common_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./static/css/common.scss */ \"./src/static/css/common.scss\");\n/* harmony import */ var _static_css_common_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_static_css_common_scss__WEBPACK_IMPORTED_MODULE_0__);\n//全局样式\n\n\n var root = document.getElementById('root');\n\n root.innerHTML = '<div class=\"test iconfont\">&#xe851;</div>'\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
