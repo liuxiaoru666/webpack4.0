@@ -1,6 +1,9 @@
+//低版本浏览器补充
+import "@babel/polyfill";
 //全局样式
 import './static/css/common.scss';
+import './style.css';
+//引入图片
+import logo from './static/images/logo.jpg';
 
- var root = document.getElementById('root');
-
- root.innerHTML = '<div class="test iconfont">&#xe851;</div>'
+let aa = 434;
