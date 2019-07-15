@@ -13,7 +13,7 @@ module.exports =  {
     devServer:{
         contentBase:'./dist',
         open:true,//autoOpenBroser
-        port:8090,
+        port:8080,
         hot:true,//开启HMR模块热替换
         hotOnly:true//浏览去不自动刷新
     },
