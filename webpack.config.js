@@ -53,15 +53,16 @@ module.exports =  {
                        }
                     },//style-loader挂载css到head
                    //处理css关系生成文件
-                    'sass-loader',
-                    'postcss-loader'//
+                    'postcss-loader',//
+                    'sass-loader'
                 ] 
             },
             {
                 test:/\.css$/,
                 use:[
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'postcss-loader'
                 ]
             },
             {
@@ -78,10 +79,7 @@ module.exports =  {
                 { 
                     test: /\.js$/,
                      exclude: /node_modules/, 
-                     loader: "babel-loader",
-                     options:{
-                        "presets": [["@babel/preset-env",{useBuiltIns:'usage'}]]
-                     }
+                     loader: "babel-loader"
                  }
         ]
     },

@@ -1,3 +1,5 @@
-div:nth-of-type(odd){
-    color:red;
-}
+.flex{
+    display:flex;
+    transform:translate(100px,0);
+    
+  }
