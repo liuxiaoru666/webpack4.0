@@ -53,8 +53,8 @@ module.exports =  {
                        }
                     },//style-loader挂载css到head
                    //处理css关系生成文件
-                    'postcss-loader',//
-                    'sass-loader'
+                    'sass-loader',
+                    'postcss-loader'
                 ] 
             },
             {
@@ -78,7 +78,7 @@ module.exports =  {
                 },
                 { 
                     test: /\.js$/,
-                     exclude: /node_modules/, 
+                     exclude: /node_modules/, //忽略第三方文件编译
                      loader: "babel-loader"
                  }
         ]
