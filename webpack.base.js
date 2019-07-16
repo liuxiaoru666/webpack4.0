@@ -7,16 +7,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports =  {
-    mode:'development',//development时打包文件不压缩，production时压缩
-    devtool:'cheap-module-eval-source-map',//开发映射关系最佳实践
-    // devtool:'cheap-module-source-map',//线上最佳实践
-    devServer:{
-        contentBase:'./dist',
-        open:true,//autoOpenBroser
-        port:8080,
-        hot:true,//开启HMR模块热替换
-        hotOnly:true//浏览去不自动刷新
-    },
     entry:{
         main:'./src/index.js',
         // sub:'./src/index.js'//打包多个js
@@ -88,7 +78,6 @@ module.exports =  {
         filename:'index.html',
         template:'index.html'
         }),
-        new CleanWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new CleanWebpackPlugin()
     ]
 }
