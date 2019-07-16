@@ -1,23 +1,28 @@
 {
   "name": "webpack4.0",
+  "sideEffects": [
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "",
   "private": true,
   "scripts": {
     "bundle": "webpack",
-    "start": "webpack-dev-server",
-    "server": "node server.js"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.pro.js"
   },
   "author": "liuxiaoru",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "@babel/runtime": "^7.5.4",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
@@ -27,10 +32,13 @@
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.1",
     "webpack-dev-middleware": "^3.7.0",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
   }
 }
