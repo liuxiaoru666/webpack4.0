@@ -8,8 +8,9 @@
   "private": true,
   "scripts": {
     "bundle": "webpack",
-    "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.pro.js"
+    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "webpack --config ./build/webpack.pro.js",
+    "dev-build":"webpack --config ./build/webpack.dev.js"
   },
   "author": "liuxiaoru",
   "license": "ISC",
