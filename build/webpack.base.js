@@ -9,13 +9,19 @@ const webpack = require('webpack');
 module.exports =  {
     context: path.resolve(__dirname, '../'),//设置相对路径参照
     entry:{
-        main:'./src/index.js',
+        main:'./src/index.js'
+        
         // sub:'./src/index.js'//打包多个js
     },//入口
     output:{//打包路径
         // publicPath:'/',//可以写cdn地址
         filename:'[name].js',
         path:path.resolve(__dirname,'../dist')
+    },
+    optimization:{
+        splitChunks:{//代码分割配置
+           chunks:'all'
+        }
     },
     module:{//配置loader(打包非.js结尾文件，webpack自己只能打包js文件)
         rules:[

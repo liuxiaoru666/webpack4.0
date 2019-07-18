@@ -7,16 +7,17 @@
   "description": "",
   "private": true,
   "scripts": {
-    "bundle": "webpack",
-    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.pro.js",
-    "dev-build":"webpack --config ./build/webpack.dev.js"
+    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
+    "dev-build": "webpack --config ./build/webpack.dev.js"
   },
   "author": "liuxiaoru",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.5.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "lodash": "^4.17.14",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   },
