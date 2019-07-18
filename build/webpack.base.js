@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //CleanWebpackPlugin打包开始时先删除之前的打包文件
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 //plugin 在webpack打包过程中做一些事情（类似生命周期函数）
+
+//打包分析图表
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const webpack = require('webpack');
 
 module.exports =  {
@@ -16,11 +20,13 @@ module.exports =  {
     output:{//打包路径
         // publicPath:'/',//可以写cdn地址
         filename:'[name].js',
+        chunkFilename:"[name].chunk.js",
         path:path.resolve(__dirname,'../dist')
     },
     optimization:{
-        splitChunks:{//代码分割配置
-           chunks:'all'
+        usedExports:true,//开发环境treeShaking配置(注意package.json配置sideEffects),生产环境不需要
+        splitChunks:{
+           chunks:'all'//代码分割配置
         }
     },
     module:{//配置loader(打包非.js结尾文件，webpack自己只能打包js文件)
@@ -37,30 +43,6 @@ module.exports =  {
                     outputPath:'./static/images/'
                 }
                }
-            },
-            {//打包scss文件
-                test:/\.scss$/,
-                use:[
-                    'style-loader',
-                    {
-                    loader: 'css-loader',
-                    options:{
-                        importLoaders:2, //scss文件引入其他scss也走全部cssloader
-                        // modules:true//开启css模块化打包s
-                       }
-                    },//style-loader挂载css到head
-                   //处理css关系生成文件
-                    'sass-loader',
-                    'postcss-loader'
-                ] 
-            },
-            {
-                test:/\.css$/,
-                use:[
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader'
-                ]
             },
             {
                 test:/\.(svg|eot|ttf|woff2?)(\?.*)?$/,
@@ -85,6 +67,7 @@ module.exports =  {
         filename:'index.html',
         template:'index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new BundleAnalyzerPlugin()
     ]
 }

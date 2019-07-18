@@ -1,13 +1,14 @@
 {
   "name": "webpack4.0",
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "*.scss"
   ],
   "version": "1.0.0",
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --config ./build/webpack.pro.js",
+    "build": " webpack --profile --json > stats.json --config ./build/webpack.pro.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "dev-build": "webpack --config ./build/webpack.dev.js"
   },
@@ -32,13 +33,16 @@
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.1",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"

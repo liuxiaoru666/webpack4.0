@@ -12,8 +12,33 @@ const devConfig =  {
         hot:true,//开启HMR模块热替换
         // hotOnly:true//浏览去不自动刷新
     },
-    optimization:{//开发环境treeShaking配置(注意package.json配置sideEffects),生产环境不需要
-        usedExports:true
+    module:{
+        rules:[
+            {//打包scss文件
+                test:/\.scss$/,
+                use:[
+                    'style-loader',
+                    {
+                    loader: 'css-loader',
+                    options:{
+                        importLoaders:2, //scss文件引入其他scss也走全部cssloader
+                        // modules:true//开启css模块化打包s
+                       }
+                    },//style-loader挂载css到head
+                   //处理css关系生成文件
+                    'sass-loader',
+                    'postcss-loader'
+                ] 
+            },
+            {
+                test:/\.css$/,
+                use:[
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader'
+                ]
+            }
+        ]
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin()

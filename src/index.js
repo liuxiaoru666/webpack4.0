@@ -18,3 +18,11 @@ async function getLodash(){
 getLodash().then((res)=>{
     console.log(res.join([2,3,4],"**"))
 });
+
+
+document.addEventListener('click',()=>{
+    //maigic注释语法，webpackPrefetch空闲加载js文件
+    import(/*webpackPrefetch:true*/'./click.js').then(({default:func})=>{
+        func()
+    })
+})
